@@ -1,0 +1,9 @@
+numpy
+pandas
+matplotlib
+scikit-learn
+tqdm
+wfdb
+torch>=2.0
+fastai
+notebook
