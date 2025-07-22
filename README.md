@@ -16,6 +16,20 @@ This repository contains multiple deep learning models developed and tested on t
 | `xLSTM.ipynb`                   | A multi-layer LSTM model with optional CNN feature extraction front-end for temporal modeling. |
 | `MacroROC_Comparison.ipynb`     | Aggregates predictions across all models and visualizes macro-average ROC curves. |
 
+
+## Modular Model Implementations
+
+All models are modularized in the `models/` directory and loaded dynamically using a central `model_selector.py`. Each file defines a `build_model()` function for easy integration into training scripts.
+
+| Model Name        | File                    | Architecture Description |
+|-------------------|-------------------------|---------------------------|
+| `resnet1d`        | `resnet1d.py`           | Standard ResNet18-style 1D CNN for ECG signals |
+| `xresnet1d`       | `xresnet1d.py`          | Deeper ResNet variant with flexible block depths |
+| `transformer`     | `transformer.py`        | Pure Transformer encoder for sequence modeling |
+| `cnn_transformer` | `cnn_transformer.py`    | Hybrid model combining 1D CNN layers with Transformer |
+| `xlstm`           | `xlstm.py`              | Hybrid CNN + Bidirectional LSTM for temporal modeling |
+
+
 ## Features
 
 - Multi-label classification using **SCP diagnostic codes**
